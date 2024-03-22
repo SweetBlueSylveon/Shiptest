@@ -1395,6 +1395,14 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/space)
+"et" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gut_cargo";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/engine/hull/interior,
+/area/space)
 "ex" = (
 /turf/open/floor/grass/ship,
 /area/space)
@@ -3477,6 +3485,10 @@
 	planetary_atmos = 0
 	},
 /area/space)
+"lD" = (
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "lF" = (
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 1
@@ -3565,6 +3577,9 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"lY" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/space)
 "lZ" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -4007,6 +4022,12 @@
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"nr" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -5944,6 +5965,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"sL" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "sM" = (
 /obj/structure/toilet{
 	dir = 4
@@ -6090,6 +6117,12 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"tr" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/space)
 "ts" = (
 /obj/effect/turf_decal/minutemen/middle,
@@ -6452,6 +6485,10 @@
 /area/space)
 "uK" = (
 /turf/open/floor/plasteel/mono,
+/area/space)
+"uL" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "uM" = (
 /obj/structure/closet/secure_closet/contraband/heads,
@@ -9632,6 +9669,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Fo" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "Fp" = (
 /obj/structure/rack,
 /obj/item/gun/energy/pulse/pistol/m1911{
@@ -9813,6 +9856,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"FY" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ga" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light_switch{
@@ -9855,6 +9902,12 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"Gj" = (
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Gl" = (
 /obj/structure/table/reinforced,
@@ -10275,6 +10328,12 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"HM" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "HN" = (
 /turf/open/floor/concrete/pavement,
@@ -10726,6 +10785,13 @@
 /obj/structure/rack,
 /obj/item/gun/ballistic/rocketlauncher,
 /turf/open/floor/plasteel,
+/area/space)
+"Jw" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "tactical chair"
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Jx" = (
 /obj/structure/chair/comfy/black{
@@ -11584,6 +11650,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Mh" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Mi" = (
 /obj/structure/sign/warning/nosmoking,
 /turf/closed/indestructible/riveted,
@@ -12067,6 +12139,10 @@
 "Oi" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
+/area/space)
+"Oj" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ok" = (
 /obj/machinery/camera/motion/thunderdome{
@@ -13007,6 +13083,12 @@
 	},
 /turf/open/floor/pod,
 /area/space)
+"RN" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "RS" = (
 /obj/structure/table/reinforced,
 /obj/item/sbeacondrop/bomb{
@@ -13022,6 +13104,10 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"RV" = (
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "RW" = (
 /obj/structure/chair/stool/bar{
@@ -13877,6 +13963,10 @@
 /obj/machinery/telecomms/hub/preset,
 /turf/open/floor/plasteel,
 /area/space)
+"Ve" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/space)
 "Vi" = (
 /obj/structure/closet/secure_closet/security,
 /obj/item/storage/belt/security/full,
@@ -14555,6 +14645,12 @@
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
 /area/space)
+"Xr" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Xu" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -14627,6 +14723,12 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/space)
+"XH" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/space)
 "XI" = (
 /obj/effect/turf_decal/corner/opaque/brown,
@@ -14766,6 +14868,10 @@
 "Yf" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
+/area/space)
+"Yg" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
 /area/space)
 "Yh" = (
 /obj/item/storage/fancy/cigarettes/cigars{
@@ -19526,13 +19632,13 @@ gs
 gs
 gs
 gs
+Fo
+lY
 gs
 gs
 gs
-gs
-gs
-gs
-gs
+lY
+Fo
 gs
 gs
 gs
@@ -19781,17 +19887,17 @@ gs
 gs
 gs
 gs
+lY
+Fo
+XH
+lY
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+XH
+Fo
+lY
 gs
 gs
 gs
@@ -20037,19 +20143,19 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+lY
+XH
+tr
+lY
+et
+et
+et
+lY
+tr
+XH
+lY
+lY
 gs
 gs
 gs
@@ -20294,19 +20400,19 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+Ku
+tr
+Ku
+lY
+Ku
+Ku
+Ku
+lY
+Ku
+tr
+Ku
+lY
 gs
 gs
 gs
@@ -20551,19 +20657,19 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+Ku
+Ku
+Ku
+Oj
+Ku
+Ku
+Ku
+Oj
+Ku
+Ku
+Ku
+lY
 gs
 gs
 gs
@@ -20807,21 +20913,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+lY
+lY
+lY
+lY
+lY
+Ku
+Ku
+Ku
+lY
+lY
+lY
+lY
+lY
+lY
 gs
 gs
 gs
@@ -21064,21 +21170,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+lY
+Ku
+Ku
+Ku
+Ku
+Ku
+nn
+Ku
+Ku
+lD
+lY
 gs
 gs
 gs
@@ -21321,21 +21427,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+Oj
+Ku
+Ku
+Ku
+Ku
+Ku
+nn
+Ku
+Ku
+lD
+lY
 gs
 gs
 gs
@@ -21578,21 +21684,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+lY
+lY
+Mh
+lY
+Mh
+lY
+lY
+Ku
+Ku
+Ku
+lY
 gs
 gs
 gs
@@ -21835,21 +21941,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+lY
+Ku
+Ku
+Ku
+Ku
+Ku
+lY
+dx
+Ku
+FY
+lY
 gs
 gs
 gs
@@ -22092,21 +22198,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+Oj
+Ku
+Ku
+RV
+Ku
+Ku
+lY
+dx
+Ku
+FY
+lY
 gs
 gs
 gs
@@ -22349,21 +22455,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+uL
+Ku
+Ku
+lY
+Ku
+Jw
+Ku
+Jw
+Ku
+lY
+dx
+Ku
+FY
+lY
 gs
 gs
 gs
@@ -22606,21 +22712,21 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+lY
+Ku
+lY
+lY
+Ve
+Xr
+dx
+Gj
+Ve
+lY
+lY
+Ku
+lY
+lY
 gs
 gs
 gs
@@ -22864,19 +22970,19 @@ gs
 gs
 gs
 gs
+lY
+lY
+lY
 gs
+Ve
+Ve
+Ve
+Ve
+Ve
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+lY
+lY
+lY
 gs
 gs
 gs
@@ -24921,18 +25027,18 @@ gs
 gs
 gs
 gs
+uq
+sL
+sL
+uq
 gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+sL
+sL
+uq
 gs
 gs
 gs
@@ -25177,20 +25283,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uq
+nr
+nr
+uq
+uq
+et
+et
+uq
+uq
+nr
+nr
+uq
+uq
 gs
 gs
 gs
@@ -25434,20 +25540,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+Ku
+RN
+RN
+Ku
+uq
+Ku
+Ku
+uq
+Ku
+RN
+RN
+Ku
+uq
 gs
 gs
 gs
@@ -25691,20 +25797,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+Ku
+Ku
+Ku
+Ku
+pm
+Ku
+Ku
+pm
+Ku
+Ku
+Ku
+Ku
+uq
 gs
 gs
 gs
@@ -25948,20 +26054,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+Ku
+Ku
+Ku
+uq
+uq
+Ku
+Ku
+uq
+uq
+Ku
+Ku
+Ku
+uq
 gs
 gs
 gs
@@ -26205,20 +26311,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uq
+uq
+uq
+uq
+Ku
+Ku
+Ku
+Ku
+uq
+uq
+uq
+uq
+uq
 gs
 gs
 gs
@@ -26462,20 +26568,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uL
+Ku
+Ku
+pm
+Ku
+Ku
+Ku
+Ku
+pm
+Ku
+Ku
+HM
+uq
 gs
 gs
 gs
@@ -26719,20 +26825,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uL
+Ku
+Ku
+uq
+dx
+Jw
+Ku
+dx
+uq
+Ku
+Ku
+HM
+uq
 gs
 gs
 gs
@@ -26976,20 +27082,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uL
+Ku
+Ku
+uq
+uq
+Xr
+Gj
+uq
+uq
+Ku
+Ku
+HM
+uq
 gs
 gs
 gs
@@ -27233,20 +27339,20 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+uL
+Ku
+Ku
+Ku
+uq
+Yg
+Yg
+uq
+Ku
+Ku
+Ku
+HM
+uq
 gs
 gs
 gs
@@ -27490,20 +27596,20 @@ gs
 gs
 gs
 gs
+uq
+uq
+Ku
+Ku
+Ku
+uq
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+Ku
+Ku
+Ku
+uq
+uq
 gs
 gs
 gs
@@ -27748,18 +27854,18 @@ gs
 gs
 gs
 gs
+uq
+uq
+Ku
+Ku
+uq
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+Ku
+Ku
+uq
+uq
 gs
 gs
 gs
@@ -28006,16 +28112,16 @@ gs
 gs
 gs
 gs
+uq
+et
+et
+uq
 gs
 gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
-gs
+uq
+et
+et
+uq
 gs
 gs
 gs
