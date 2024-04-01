@@ -44,7 +44,7 @@
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "km" = (
 /obj/structure/sign/number/four,
@@ -80,7 +80,13 @@
 "pF" = (
 /obj/machinery/button,
 /obj/effect/turf_decal/number/right_zero,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"sf" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plating/icemoon,
 /area/space)
 "sC" = (
 /turf/closed/wall,
@@ -88,7 +94,7 @@
 "sQ" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/blue,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "tz" = (
 /obj/effect/turf_decal/number/right_seven,
@@ -99,15 +105,21 @@
 /obj/structure/sign/number/four,
 /turf/open/floor/plating,
 /area/space)
+"vh" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
+/turf/open/floor/plating/icemoon,
+/area/space)
 "wa" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/sign/number,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "wS" = (
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/wrench,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "wT" = (
 /obj/machinery/power/port_gen/pacman,
@@ -116,7 +128,7 @@
 "xb" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/sign/number/two,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "yN" = (
 /obj/structure/bonfire,
@@ -131,7 +143,11 @@
 "AG" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/sign/number/one,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"AT" = (
+/obj/effect/turf_decal/number/right_zero,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "AX" = (
 /obj/structure/closet/crate,
@@ -141,7 +157,7 @@
 /area/space)
 "Ba" = (
 /obj/effect/turf_decal/number/left_zero,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "BT" = (
 /obj/machinery/button,
@@ -184,11 +200,11 @@
 /area/space)
 "Fh" = (
 /obj/effect/turf_decal/number/right_three,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "Gk" = (
 /obj/effect/turf_decal/number/left_one,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "GD" = (
 /obj/structure/sign/number/six,
@@ -212,16 +228,34 @@
 /obj/effect/turf_decal/number/right_six,
 /turf/open/floor/plating,
 /area/space)
+"Jb" = (
+/obj/structure/table,
+/turf/open/floor/plating/icemoon,
+/area/space)
 "Jj" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/indestructible{
 	dir = 4
 	},
+/turf/open/floor/plating,
+/area/space)
+"Kc" = (
+/obj/effect/turf_decal/number/right_two,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"Kz" = (
+/obj/machinery/door/poddoor/shutters/indestructible,
 /turf/open/floor/plating,
 /area/space)
 "Mf" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/sign/number/five,
 /turf/open/floor/plating,
+/area/space)
+"Nw" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/plating/icemoon,
 /area/space)
 "Qq" = (
 /turf/closed/mineral/random/snow,
@@ -231,14 +265,21 @@
 /obj/structure/cable/blue{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"QJ" = (
+/obj/effect/turf_decal/number/right_five,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "QU" = (
 /turf/open/space/basic,
 /area/space)
 "QV" = (
-/obj/item/paper,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"Rq" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "Si" = (
 /obj/machinery/button,
@@ -260,7 +301,11 @@
 "Vq" = (
 /obj/structure/safe,
 /obj/item/keycard,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
+/area/space)
+"VH" = (
+/obj/machinery/door/keycard,
+/turf/open/floor/plating/icemoon,
 /area/space)
 "VT" = (
 /obj/item/keycard/stockroom,
@@ -278,12 +323,16 @@
 /obj/structure/sign/number/two,
 /turf/open/floor/plating,
 /area/space)
+"Zb" = (
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plating/icemoon,
+/area/space)
 "Zv" = (
 /turf/open/floor/plating/asteroid/icerock,
 /area/space)
 "Zx" = (
 /obj/structure/sign/number,
-/turf/open/floor/plating,
+/turf/open/floor/plating/icemoon,
 /area/space)
 
 (1,1,1) = {"
@@ -1903,7 +1952,7 @@ sC
 sC
 bL
 Zv
-ly
+QV
 sC
 sC
 sC
@@ -1969,12 +2018,12 @@ EM
 sC
 bL
 Zv
-ly
-ly
-ly
+QV
+QV
+QV
 sC
 sC
-ly
+QV
 nR
 nR
 nR
@@ -2034,14 +2083,14 @@ ly
 ly
 sC
 bL
-ly
-ly
-ly
+QV
+QV
+QV
 Ba
-Xe
-ly
-ly
-ly
+VH
+QV
+QV
+QV
 nR
 nR
 nR
@@ -2100,14 +2149,14 @@ ly
 Ie
 sC
 bL
-ly
-ly
-ly
-ly
-ly
-ly
-ly
-ly
+QV
+QV
+QV
+QV
+QV
+QV
+QV
+QV
 nR
 nR
 nR
@@ -2167,9 +2216,9 @@ sC
 sC
 bL
 sC
-ly
+QV
 Zx
-ly
+QV
 sC
 sC
 sC
@@ -2225,19 +2274,19 @@ Zv
 bL
 bL
 bL
-ly
-ly
+QV
+QV
 bL
-ly
-ly
+QV
+QV
 bL
 bL
 sC
 pF
-ly
-ly
-Dv
-ly
+QV
+QV
+AT
+QV
 sC
 Zv
 nR
@@ -2299,10 +2348,10 @@ bL
 Zv
 Zv
 bL
-ly
-ly
-ly
-Jj
+QV
+QV
+QV
+vh
 sC
 sC
 Zv
@@ -2348,7 +2397,7 @@ nR
 nR
 nR
 nR
-ly
+QV
 sC
 ly
 ly
@@ -2365,11 +2414,11 @@ bL
 bL
 Zv
 Zv
-ly
-ly
+QV
+QV
 Zv
-ly
-ly
+QV
+QV
 nR
 nR
 nR
@@ -2413,14 +2462,14 @@ nR
 nR
 nR
 nR
-ly
-ly
+QV
+QV
 sC
 ly
 ly
 ly
 sC
-ly
+QV
 bL
 bL
 bL
@@ -2479,8 +2528,8 @@ nR
 nR
 nR
 Zv
-ly
-ly
+QV
+QV
 UY
 ly
 ly
@@ -2546,7 +2595,7 @@ Zv
 Zv
 Zv
 Zv
-ly
+QV
 UY
 ly
 pj
@@ -2611,8 +2660,8 @@ Zv
 Zv
 Zv
 Zv
-ly
-ly
+QV
+QV
 UY
 Dv
 ly
@@ -2677,14 +2726,14 @@ Zv
 nR
 nR
 nR
-ly
-ly
+QV
+QV
 sC
 ly
 ly
 ly
 sC
-ly
+QV
 bL
 bL
 bL
@@ -2693,9 +2742,9 @@ bL
 Zv
 Zv
 bL
-ly
-ly
-ly
+QV
+QV
+QV
 bL
 bL
 bL
@@ -2744,7 +2793,7 @@ nR
 nR
 nR
 nR
-ly
+QV
 sC
 ly
 ly
@@ -2758,11 +2807,11 @@ bL
 bL
 bL
 Zv
-ly
-ly
-ly
-ly
-ly
+QV
+QV
+QV
+QV
+QV
 bL
 bL
 bL
@@ -2824,11 +2873,11 @@ bL
 bL
 bL
 Zv
-ly
+QV
 sC
 AG
-ly
-ly
+QV
+QV
 bL
 bL
 bL
@@ -2890,11 +2939,11 @@ Zv
 bL
 bL
 Zv
-ly
+QV
 wS
-ly
-ly
-ly
+QV
+QV
+QV
 bL
 Zv
 Zv
@@ -2956,11 +3005,11 @@ bL
 bL
 bL
 bL
-ly
-wT
-ly
-ly
-ly
+QV
+Zb
+QV
+QV
+QV
 bL
 bL
 Zv
@@ -3022,16 +3071,16 @@ bL
 Zv
 bL
 bL
-ly
+QV
 sC
 xb
-ly
-ly
+QV
+QV
 bL
 Zv
 bL
 Zv
-nR
+bL
 bL
 nR
 nR
@@ -3089,15 +3138,15 @@ Zv
 bL
 bL
 bL
-ly
-ly
-ly
-ly
+QV
+QV
+QV
+QV
 bL
 bL
 bL
 Zv
-nR
+bL
 nR
 Zv
 nR
@@ -3155,16 +3204,16 @@ Zv
 bL
 bL
 bL
-ly
-ly
-ly
-ly
+QV
+QV
+QV
+QV
 Zv
 Zv
 nR
-ly
-ly
-ly
+QV
+QV
+QV
 Zv
 nR
 nR
@@ -3217,20 +3266,20 @@ ly
 ly
 ly
 sC
-ly
+QV
 Zv
 bL
 Zv
 bL
-ly
-ly
+QV
+QV
 bL
 Zv
 Zv
-ly
-ly
-ly
-ly
+Rq
+QV
+QV
+QV
 nR
 nR
 nR
@@ -3282,8 +3331,8 @@ ly
 ly
 ly
 ly
-UY
-ly
+Kz
+QV
 bL
 bL
 Zv
@@ -3293,11 +3342,11 @@ Zv
 bL
 Zv
 Zv
-ly
-ly
-ly
-ly
-ly
+Rq
+QV
+Nw
+QV
+QV
 nR
 nR
 Zv
@@ -3348,7 +3397,7 @@ ly
 ly
 ly
 ly
-UY
+Kz
 bL
 bL
 bL
@@ -3359,11 +3408,11 @@ Zv
 bL
 Zv
 Zv
-ly
-ly
-ly
-ly
-ly
+Rq
+QV
+Jb
+Jb
+Jb
 nR
 nR
 Zv
@@ -3414,8 +3463,8 @@ ly
 ly
 ly
 ly
-UY
-Fa
+Kz
+Kc
 bL
 bL
 Zv
@@ -3426,9 +3475,9 @@ bL
 Zv
 Zv
 Zv
-ly
-ly
-ly
+Rq
+Rq
+Rq
 nR
 nR
 Zv
@@ -3481,7 +3530,7 @@ sC
 ly
 ly
 sC
-ly
+QV
 Zv
 bL
 Zv
@@ -3690,9 +3739,9 @@ bL
 Zv
 bL
 Zv
-ly
-ly
-ly
+Rq
+Rq
+Rq
 nR
 nR
 Zv
@@ -3741,7 +3790,7 @@ ly
 ly
 ly
 ly
-UY
+Kz
 ly
 gi
 sC
@@ -3755,11 +3804,11 @@ Zv
 bL
 bL
 bL
-ly
-ly
-ly
-ly
-ly
+Rq
+QV
+Jb
+Jb
+Jb
 nR
 Qq
 Zv
@@ -3807,7 +3856,7 @@ ly
 ly
 ly
 ly
-UY
+Kz
 ly
 ly
 sC
@@ -3821,11 +3870,11 @@ Zv
 bL
 bL
 Zv
-ly
-ly
-ly
-ly
-ly
+Rq
+QV
+sf
+QV
+QV
 nR
 nR
 Qq
@@ -3873,7 +3922,7 @@ sC
 ly
 ly
 tz
-UY
+Kz
 ly
 ly
 sC
@@ -3887,10 +3936,10 @@ bL
 bL
 Zv
 bL
-ly
-ly
-ly
-ly
+Rq
+QV
+QV
+QV
 nR
 nR
 nR
@@ -3953,10 +4002,10 @@ bL
 bL
 bL
 bL
-bL
-ly
-ly
-ly
+nR
+QV
+QV
+QV
 nR
 nR
 nR
@@ -4021,7 +4070,7 @@ bL
 bL
 bL
 bL
-nR
+bL
 nR
 nR
 Zv
@@ -4087,7 +4136,7 @@ bL
 Zv
 bL
 bL
-nR
+bL
 Zv
 Zv
 nR
@@ -4153,7 +4202,7 @@ Zv
 Zv
 bL
 bL
-nR
+bL
 nR
 nR
 nR
@@ -4405,13 +4454,13 @@ bL
 bL
 bL
 Zv
-ly
+QV
 sC
 ly
 ly
 Si
 ly
-UY
+Kz
 od
 ly
 ly
@@ -4471,13 +4520,13 @@ Zv
 Zv
 bL
 Zv
-ly
+QV
 eI
 ly
 ly
 ly
 ly
-UY
+Kz
 ly
 ly
 ly
@@ -4543,7 +4592,7 @@ ly
 ly
 YK
 ly
-UY
+Kz
 ly
 VT
 ly
@@ -4600,10 +4649,10 @@ GD
 ly
 sC
 sC
-ly
+QV
 Zv
 bL
-ly
+QV
 sC
 ly
 EM
@@ -4798,7 +4847,7 @@ ly
 ly
 ly
 UY
-ly
+QV
 bL
 Zv
 bL
@@ -4864,7 +4913,7 @@ wT
 ly
 sC
 sC
-ly
+QV
 bL
 bL
 bL
@@ -5201,10 +5250,10 @@ Zv
 Zv
 bL
 sC
-ly
-HZ
-ly
-ly
+QV
+QJ
+QV
+QV
 sC
 bL
 bL
@@ -5329,8 +5378,8 @@ bL
 bL
 bL
 sC
-ly
-HZ
+QV
+QJ
 sC
 ns
 ly
@@ -5339,8 +5388,8 @@ ly
 ly
 ly
 sC
-ly
-HZ
+QV
+QJ
 sC
 nR
 nR
@@ -5469,7 +5518,7 @@ IJ
 ly
 ly
 ly
-QV
+ly
 sC
 ly
 ly
