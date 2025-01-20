@@ -13,8 +13,10 @@
 	light_power = 0.8
 	light_range = 6
 	light_on = FALSE
+	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
+	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
@@ -40,6 +42,17 @@
 	var/lights = FALSE
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
+
+	///Vars for mech charges
+	var/charging = FALSE
+	var/charge_ready = TRUE
+	var/charge_windup = 0.5
+	var/charge_cooldown = 50
+	var/charge_power_consume = 200
+	var/charge_distance = 5
+	var/charge_break_walls = FALSE
+	var/charge_toss_structures  = FALSE
+	var/charge_toss_mobs = FALSE
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
@@ -90,6 +103,7 @@
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/mech_defense_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
+	var/datum/action/innate/mecha/mech_charge_mode/charge_action = new
 	var/datum/effect_system/smoke_spread/smoke_system = new //not an action, but trigged by one
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
 	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
@@ -148,6 +162,7 @@
 	diag_hud_set_mechstat()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	update_part_values()
+	AddComponent(/datum/component/automatic_fire_mecha,0.5)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -464,7 +479,7 @@
 ////////////////////////////
 
 
-/obj/mecha/proc/click_action(atom/target,mob/user,params)
+/obj/mecha/proc/click_action(atom/target,mob/user,params, cooldown_override = null)
 	if(!occupant || occupant != user)
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
@@ -500,13 +515,13 @@
 				to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 				return
 			if(selected.action(target,params))
-				selected.start_cooldown()
+				selected.start_cooldown(cooldown_override)
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
 		if(selected.action(target,params))
-			selected.start_cooldown()
+			selected.start_cooldown(cooldown_override)
 	else
 		if(internal_damage & MECHA_INT_CONTROL_LOST)
 			var/list/possible_targets = oview(1,src)
@@ -585,6 +600,8 @@
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
 		return 0
+	if(stopped)
+		return 0
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
@@ -592,6 +609,11 @@
 	if(zoom_mode)
 		if(world.time - last_message > 20)
 			occupant_message("<span class='warning'>Unable to move while in zoom mode!</span>")
+			last_message = world.time
+		return 0
+	if(charging)
+		if(world.time - last_message > 20)
+			occupant_message(span_warning("You can't change direction while charging!"))
 			last_message = world.time
 		return 0
 	if(!cell)
@@ -643,6 +665,7 @@
 	step_silent = FALSE
 
 /obj/mecha/Bump(atom/obstacle)
+	var/atom/throw_target = get_edge_target_turf(obstacle, dir)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -654,6 +677,27 @@
 		forceMove(get_step(src,dir))
 		use_power(phasing_energy_drain)
 		addtimer(VARSET_CALLBACK(src, can_move, TRUE), step_in*3)
+	else if(charging)
+		if(charge_break_walls && iswallturf(obstacle))
+			var/turf/closed/wall/crushed = obstacle
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+			visible_message(span_danger("[src] smashes through [obstacle]"))
+			crushed.dismantle_wall(TRUE)
+		if(isobj(obstacle))
+			var/obj/object = obstacle
+			obstacle.mech_melee_attack(src)
+			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
+				object.throw_at(throw_target, 4, 3)
+			visible_message(span_danger("[src] crashes into [obstacle]!"))
+			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+		if(ishuman(obstacle))
+			var/mob/living/carbon/human/H = obstacle
+			H.throw_at(throw_target,4,3)
+			visible_message(span_danger("[src] slams into \the [obstacle], sending [obstacle.p_them()] flying!"))
+			playsound(H, 'sound/effects/bang.ogg', 100, FALSE, -1)
+			H.Paralyze(20)
+			H.adjustStaminaLoss(30)
+			H.apply_damage(rand(20,35), BRUTE)
 	else
 		if(..()) //mech was thrown
 			return
@@ -943,6 +987,7 @@
 	else
 		to_chat(user, "<span class='warning'>You stop entering the exosuit!</span>")
 
+// wake up should go off here
 /obj/mecha/proc/moved_inside(mob/living/carbon/human/H)
 	. = FALSE
 	if(H && H.client && (H in range(1)))
@@ -958,6 +1003,8 @@
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+		autofire_check()
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1002,6 +1049,8 @@
 	B.remote_control = src
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
+	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+	autofire_check()
 	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
@@ -1085,6 +1134,7 @@
 	var/mob/living/L = occupant
 	occupant = null //we need it null when forceMove calls Exited().
 	silicon_pilot = FALSE
+	SEND_SIGNAL(src,COMSIG_MECH_EXITED,L)
 	if(mob_container.forceMove(newloc))//ejecting mob container
 		log_message("[mob_container] moved out.", LOG_MECHA)
 		L << browse(null, "window=exosuit")
@@ -1164,7 +1214,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			user.sight |= occupant_sight_flags
 
 ///////////////////////
-////// Ammo stuff /////
+////// Weapon stuff ///
 ///////////////////////
 
 /obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,fail_chat_override = FALSE)
@@ -1212,3 +1262,41 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		else
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
+
+/obj/mecha/proc/autofire_check()
+	if(istype(selected,/obj/item/mecha_parts/mecha_equipment/weapon))
+		var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = selected
+		if(mech_gun.full_auto)
+			SEND_SIGNAL(src,COMSIG_MECH_ENABLE_AUTOFIRE)
+			SEND_SIGNAL(src,COMSIG_MECH_SET_AUTOFIRE_SPEED, mech_gun.equip_cooldown)
+		else
+			SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+	else
+		SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+
+
+///////////////////////
+////// Charging /////
+///////////////////////
+
+/obj/mecha/proc/start_charge()
+	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 2)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)), charge_windup SECONDS, TIMER_STOPPABLE)
+
+/obj/mecha/proc/handle_charge()
+	var/turf/mecha_loc = get_turf(src)
+	charging = TRUE
+	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
+	if(!charge_target)
+		charging = FALSE
+		return
+	cell.use(charge_power_consume)
+	walk_towards(src, charge_target, 0.7)
+	sleep(get_dist(src, charge_target) * 0.7)
+	charge_end()
+
+/obj/mecha/proc/charge_end()
+	walk(src,0)
+	charging = FALSE

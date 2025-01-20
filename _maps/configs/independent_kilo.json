@@ -7,6 +7,7 @@
 	],
 	"faction": "/datum/faction/independent",
 	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
 	"namelists": [
 		"GENERAL",
 		"SPACE",
@@ -31,7 +32,7 @@
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/independent/assistant",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true

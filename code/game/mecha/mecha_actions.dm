@@ -81,6 +81,7 @@
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		UpdateButtonIcon()
+		chassis.autofire_check()
 		return
 	var/number = 0
 	for(var/A in available_equipment)
@@ -95,6 +96,7 @@
 				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
+			chassis.autofire_check()
 			UpdateButtonIcon()
 			return
 
@@ -182,6 +184,20 @@
 		chassis.update_part_values()
 		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
 	UpdateButtonIcon()
+
+/datum/action/innate/mecha/mech_charge_mode
+	name = "Charge"
+	button_icon_state = "mech_overload_off"
+
+/datum/action/innate/mecha/mech_charge_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	if(chassis.charge_ready && !chassis.charging)
+		chassis.start_charge()
+		chassis.charge_ready = FALSE
+		addtimer(VARSET_CALLBACK(chassis, charge_ready, TRUE), chassis.charge_cooldown)
+	else
+		chassis.occupant_message(span_warning("The leg actuators are still recharging!"))
 
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"
